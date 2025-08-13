@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter,
 Routes, 
 Route, 
@@ -11,22 +10,29 @@ import LogIn from './pages/logIn/LogIn'
 import SignUp from './pages/signUp/SignUp'
 import NotFound from './pages/notFound/NotFound'
 import Navbar from './components/navbar/Navbar'
+import Footer from './components/footer/Footer'
+import GoTop from './components/goTop/GoTop'
+import Settings from './components/settings/Settings'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/login" element={<LogIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <GoTop />
+      <Settings />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/login" element={<LogIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+      
+      <Footer />
+    </>
   )
 }
 

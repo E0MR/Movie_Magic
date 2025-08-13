@@ -1,3 +1,49 @@
-.home-container {
-  
+
+.header {
+  padding: 2rem 1rem;
+  color: white;
+  border-radius: 1rem;
+  background-image: linear-gradient(135deg, #1A237E, #2962FF);
+}
+
+.header h2 {
+  color: #fff9;
+  margin: 1rem 0 2rem;
+}
+
+.header button {
+  all: unset;
+  background-color: orange;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.header button:hover {
+  background-color: #F5B301;
+}
+
+.header button span {
+  font-weight: 900;
+  margin-left: 1rem;
+}
+
+
+.movies {
+  margin-top: 2rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  border-radius: 1rem;
+}
+
+.movies div {
+  background-color: #F9FAFB;
+  box-shadow: 0 0 5px #334155;
+  padding: 5rem 0;
+  border-radius: 1rem;
 }

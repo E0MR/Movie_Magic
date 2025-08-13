@@ -5,6 +5,145 @@
   text-align: center;
 }
 
+.container {
+  margin-top: 7.5rem;
+}
+
+
+/* =========================
+   MOVIE MAGIC COLOR SYSTEM
+   ========================= */
+
+/* LIGHT THEME */
+:root[data-theme="light"] {
+  /* Core Colors */
+  --color-primary: #2D6CDF;
+  --color-primary-hover: #2555B3;
+  --color-secondary: #5AA2F7;
+  --color-accent: #F5B301;
+  --color-error: #E53935;
+  --color-success: #43A047;
+
+  /* Backgrounds */
+  --color-bg: #FFFFFF;
+  --color-bg-card: #F9FAFB;
+
+  /* Text */
+  --color-text-heading: #1E293B;
+  --color-text-body: #334155;
+  --color-text-muted: #64748B;
+
+  /* Buttons */
+  --color-btn-primary-bg: var(--color-primary);
+  --color-btn-primary-text: #FFFFFF;
+  --color-btn-primary-hover: var(--color-primary-hover);
+
+  --color-btn-secondary-bg: #F1F5F9;
+  --color-btn-secondary-text: #1E293B;
+  --color-btn-secondary-hover: #E2E8F0;
+
+  /* Shadows */
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  /* Border radius */
+  --radius: 10px;
+}
+
+/* DARK THEME */
+:root[data-theme="dark"] {
+  /* Core Colors */
+  --color-primary: #2D6CDF;
+  --color-primary-hover: #5AA2F7;
+  --color-secondary: #5AA2F7;
+  --color-accent: #F5B301;
+  --color-error: #E53935;
+  --color-success: #43A047;
+
+  /* Backgrounds */
+  --color-bg: #0F172A;
+  --color-bg-card: #1E293B;
+
+  /* Text */
+  --color-text-heading: #FFFFFF;
+  --color-text-body: #E2E8F0;
+  --color-text-muted: #94A3B8;
+
+  /* Buttons */
+  --color-btn-primary-bg: var(--color-primary);
+  --color-btn-primary-text: #FFFFFF;
+  --color-btn-primary-hover: var(--color-primary-hover);
+
+  --color-btn-secondary-bg: #334155;
+  --color-btn-secondary-text: #E2E8F0;
+  --color-btn-secondary-hover: #475569;
+
+  /* Shadows */
+  --shadow-card: 0 2px 8px rgba(255, 255, 255, 0.05);
+
+  /* Border radius */
+  --radius: 10px;
+}
+
+/* =========================
+   EXAMPLE COMPONENT STYLES
+   ========================= */
+
+/* Body & Text */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-heading);
+  font-family: 'Poppins', sans-serif;
+}
+
+p.muted {
+  color: var(--color-text-muted);
+}
+
+/* Cards */
+.card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-btn-primary-bg);
+  color: var(--color-btn-primary-text);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-btn-primary-hover);
+  transform: scale(1.02);
+}
+
+.btn-secondary {
+  background-color: var(--color-btn-secondary-bg);
+  color: var(--color-btn-secondary-text);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-secondary:hover {
+  background-color: var(--color-btn-secondary-hover);
+  transform: scale(1.02);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;

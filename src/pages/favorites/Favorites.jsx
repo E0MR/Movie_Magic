@@ -3,9 +3,11 @@ import './Favorites.css'
 function Favorites() {
   
   return (
-    <>
-      <h1>Favorites</h1>
-    </>
+    <div className='container fav-container'>
+      <h1 className="">
+        Favorites
+      </h1>
+    </div>
     )
 }
 

@@ -1,24 +1,33 @@
-import './Navbar.css'
+import './Navbar.css';
 
-import { Link } from 'react-router-dom'
+import logo from '../../assets/images/logo.png';
+
+import { NavLink, Link } from 'react-router-dom';
 function Navbar() {
   return ( 
     <>
-      <nav className='leftUl'>
-        <ul>
+      <nav>
+        <Link to='/'>
+          <img className='logo' src={logo} alt='Logo'/>
+        </Link>
+        
+        <ul className='leftUl'>
           <li>
-            <Link to='/'>Home</Link>
+            <NavLink to='/' data-title='Home' className={({ isActive }) => isActive ? "active" : ""}><hr /></NavLink>
           </li>
           <li>
-            <Link to='/favorites'>Favorites</Link>
+            <NavLink to='/favorites' data-title='Favorites' className={({ isActive }) => isActive ? "active" : ""}><hr /></NavLink>
           </li>
         </ul>
+        
+        <input className='search' type='search' placeholder='Search...' />
+        
         <ul className='rightUl'>
           <li>
-            <Link to='/login'>LogIn</Link>
+            <NavLink to='/login' data-title='LogIn' className={({ isActive }) => isActive ? "active" : ""}><hr /></NavLink>
           </li>
           <li>
-            <Link to='/signup'>SignUp</Link>
+            <NavLink to='/signup' data-title='SignUp' className={({ isActive }) => isActive ? "active" : ""}><hr /></NavLink>
           </li>
         </ul>
       </nav>
