@@ -33,7 +33,7 @@ function App() {
       )}
       <GoTop />
       <Settings />
-      <BrowserRouter>
+      <BrowserRouter basename="/Movie_Magic">
         <ModalStack />
 
         <Navbar />
