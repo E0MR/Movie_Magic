@@ -1,0 +1,135 @@
+.movie {
+  display: grid;
+  place-content: center;
+
+  & > div {
+    transform: translateY(-4.5rem);
+
+    .card {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      max-width: 400px;
+      padding: 1rem 1rem 2rem;
+      background-color: var(--card-bg);
+      border-radius: 1rem;
+      box-shadow: 0 0 1rem #94a3b899;
+      transition: var(--transition);
+
+      .cover {
+        width: 100%;
+        border-radius: 1rem;
+      }
+
+      .poster {
+        width: 25%;
+        /* transform: translateY(-50%); */
+        margin-top: -20%;
+        border-radius: 0.5rem;
+        outline: 0.5rem solid var(--card-bg);
+        box-shadow: 0 0 10rem var(--card-bg);
+        transition: var(--transition);
+      }
+
+      .fav-rate {
+        position: relative;
+        margin-top: -5%;
+        width: 75%;
+        padding: 1rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .rate,
+        .fav {
+          position: absolute;
+          width: 5rem;
+          height: 5rem;
+          background-color: var(--btn-secondary-bg);
+          color: var(--btn-secondary-text);
+          border-radius: 50%;
+          border: 2px solid var(--btn-secondary-text);
+        }
+
+        .fav {
+          right: 0rem;
+          font-size: 3rem;
+        }
+
+        .rate {
+          left: 0rem;
+          cursor: default;
+          animation: fillGradient 1s linear forwards, return 0s;
+
+          &::before {
+            width: 3.5rem;
+            height: 3.5rem;
+            left: 0.5rem;
+            top: 0.5rem;
+            font-size: 1.25rem;
+          }
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      .name {
+        margin: 5rem 3rem 2rem;
+
+        h3 {
+          margin-bottom: 1rem;
+          font-size: 1.25rem;
+        }
+      }
+
+      .details {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.1rem;
+        position: relative;
+
+        hr {
+          position: absolute;
+          border-color: var(--btn-secondary-hover);
+          width: 100%;
+          transform: translateY(-1rem);
+          transition: var(--transition);
+        }
+
+        p {
+          font-weight: 900;
+          font-size: 1rem;
+          display: flex;
+          flex-flow: column;
+          gap: 1rem;
+
+          span:first-child {
+            color: var(--muted);
+            transition: var(--transition);
+          }
+
+          span:nth-child(2) {
+            color: var(--color);
+            transition: var(--transition);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .movie {
+    .card {
+      .details {
+        p {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}

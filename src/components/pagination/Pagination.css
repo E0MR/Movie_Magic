@@ -1,0 +1,92 @@
+.pagination {
+  background: var(--card-bg);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem #94a3b899;
+  width: 100%;
+  height: 7.75rem;
+  color: var(--color);
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+
+  position: sticky;
+  top: 9rem;
+  z-index: var(--top-layer);
+  margin-top: 2rem;
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    input[type="number"] {
+      padding: 0.75rem;
+      border: 0.1rem solid #ccc;
+      border-radius: 0.75rem;
+      text-align: center;
+      width: 10rem;
+
+      &:focus {
+        outline-color: #2563eb;
+      }
+    }
+
+    .goTo {
+      border: none;
+      width: 10rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+    }
+  }
+
+  .pages {
+    all: unset;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .page-btn {
+      width: calc(100% / 10);
+      height: 2.5rem;
+      border-radius: 0.75rem;
+      border: 0 solid transparent;
+      cursor: pointer;
+      display: inline-grid;
+      place-items: center;
+      padding: 0.25rem;
+      font-weight: 600;
+
+      &.active {
+        background: #2563eb;
+        color: #fff;
+        border-color: transparent;
+      }
+
+      &[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+
+    .ellipsis {
+      min-width: 4rem;
+      height: 4rem;
+      display: inline-grid;
+      place-items: center;
+      color: #6b7280;
+      font-weight: 700;
+      cursor: default;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .pagination {
+    top: 7rem;
+  }
+}

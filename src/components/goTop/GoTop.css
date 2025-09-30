@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 2rem;
   right: -4rem;
-  color: white;
+  color: var(--color);
   font-weight: 900;
   font-size: 3rem;
   transform: rotate(-90deg);
@@ -11,12 +11,13 @@
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: radial-gradient(orange, transparent);
-}
+  background-image: radial-gradient(var(--btn-primary-bg), transparent);
 
-.goUp {
-  right: 2rem;
+  &.goUp {
+    right: 2rem;
+  }
 }

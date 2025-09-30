@@ -2,48 +2,66 @@
   position: fixed;
   bottom: 2rem;
   left: 2rem;
-  color: white;
+  color: var(--color);
   font-weight: 900;
   font-size: 3rem;
-  transition: 0.5s;
-  z-index: 99;
+  transition: var(--transition);
+  cursor: pointer;
+  z-index: var(--top-layer);
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: radial-gradient(orange, transparent);
-  transform: rotate(0deg);
-  transition: 0.5s;
-}
-
-.settings > span {
-  z-index: 9;
-}
-
-.open {
+  background-image: radial-gradient(var(--primary), transparent);
   transform: rotate(45deg);
-  color: red;
-  background-image: radial-gradient(white, transparent);
-}
 
-.setting {
-  position: absolute;
-  transition: 0.5s;
-  transform: rotate(0deg) translateY(0rem) rotate(0deg);
-  opacity: 0;
-}
+  &.open {
+    .theme {
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: radial-gradient(var(--primary), transparent);
+      border-radius: 50%;
+      opacity: 1;
+      transform: rotate(135deg) translateY(5rem) rotate(180deg);
+    }
 
-.open .theme {
-  opacity: 1;
-  transform: rotate(135deg) translateY(5rem) rotate(180deg);
-}
+    .lang {
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: radial-gradient(var(--primary), transparent);
+      border-radius: 50%;
+      opacity: 1;
+      font-weight: bold;
+      color: gray;
+      font-size: 2.5rem;
+      transform: rotate(225deg) translateY(5rem) rotate(90deg);
+    }
+  }
 
-.open .lang {
-  opacity: 1;
-  font-weight: bold;
-  color: gray;
-  font-size: 2.5rem;
-  transform: rotate(225deg) translateY(5rem) rotate(90deg);
+  .closed {
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+    z-index: 9;
+    transition: 0.5s;
+
+    &.inner {
+      color: var(--error);
+      transform: rotate(90deg);
+    }
+  }
+
+  .setting {
+    position: absolute;
+    transition: 0.5s;
+    transform: rotate(0deg) translateY(0rem) rotate(0deg);
+    opacity: 0;
+  }
 }

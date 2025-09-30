@@ -1,0 +1,54 @@
+.input-container {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  input {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    outline: 0.1rem solid #e2e8f0;
+    margin: 0.5rem 0;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+    color: var(--color);
+    background-color: var(--btn-secondary-bg);
+    padding-right: 1rem;
+
+    &::placeholder {
+      color: var(--btn-secondary-text);
+      opacity: 0.5;
+    }
+
+    &:focus {
+      outline-color: var(--btn-primary-hover);
+    }
+  }
+  .eye {
+    position: absolute;
+    cursor: pointer;
+    right: 0.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    z-index: 9;
+    -webkit-tap-highlight-color: transparent;
+
+    display: grid;
+    place-items: center;
+  }
+}
+
+/* &[type="date"] {
+  border-right: 1.125rem solid transparent;
+} */
+/* .input-container input[type="date"]:invalid::before {
+  content: attr(placeholder);
+  color: gray;
+} */
+
+/* background-color: var(--btn-secondary-bg);
+  position: relative;
+  padding-right: 0rem;
+  background: url("data:image/svg+xml;utf8,<svg fill='#f0f' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right -0.77rem center;
+  background-size: 2.5rem; */

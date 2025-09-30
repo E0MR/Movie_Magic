@@ -1,0 +1,49 @@
+.loader {
+  position: relative;
+  white-space: nowrap;
+  /* text-wrap: nowrap; */
+  font-size: 2.5rem;
+  color: var(--btn-secondary-bg);
+
+  &::before {
+    content: "Loading . . .";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--btn-primary-bg);
+    overflow: hidden;
+    animation: loader 2s ease infinite;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    height: 80%;
+    border-right: 0.3rem solid var(--btn-primary-bg);
+    animation: pointer 2s ease infinite;
+  }
+}
+
+@keyframes pointer {
+  0% {
+    left: -0.5rem;
+  }
+  50% {
+    left: calc(100% + 0.2rem);
+  }
+  100% {
+    left: -0.5rem;
+  }
+}
+
+@keyframes loader {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}

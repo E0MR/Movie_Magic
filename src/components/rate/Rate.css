@@ -1,0 +1,77 @@
+.rate {
+  background-image: conic-gradient(
+    var(--gradient-color) var(--gradient-percent),
+    transparent var(--gradient-percent)
+  );
+  cursor: help;
+  animation: fillGradient 1s linear forwards, return 1s linear forwards;
+
+  &::before {
+    content: attr(data-rate);
+    position: absolute;
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: var(--btn-secondary-hover);
+    color: var(--btn-secondary-text);
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+  }
+
+  &::after {
+    content: attr(data-vote);
+    font-size: 0.75rem;
+    white-space: pre;
+    position: absolute;
+    left: -1.1rem;
+    top: -1.1rem;
+    transform: translate(-50%, -50%);
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    padding: 1rem;
+    opacity: 0;
+    transition: var(--transition);
+    border-bottom-right-radius: 0.5rem;
+  }
+
+  &:hover::after {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@property --gradient-percent {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@keyframes fillGradient {
+  from {
+    --gradient-percent: 0%;
+  }
+  to {
+    --gradient-percent: var(--percentage);
+  }
+}
+
+@keyframes return {
+  0% {
+    left: 50%;
+    transform: translate(-50%, 300%) scale(2.5);
+    opacity: 0.5;
+  }
+  50% {
+    left: 50%;
+    transform: translate(-50%, 300%) scale(2.5);
+    opacity: 0.5;
+  }
+  100% {
+    left: 1rem;
+    transform: translate(0%, 0%) scale(1);
+    opacity: 1;
+  }
+}

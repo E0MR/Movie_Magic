@@ -7,29 +7,22 @@ function GoTop() {
   
   useEffect(() => {
     const handleScroll = () => {
-      // Check if the vertical scroll position is at the top (0)
-      if (window.scrollY === 0) {
-        setGoUp(false);
-      } else {
-        setGoUp(true);
-      }
+      setGoUp(prev => (window.scrollY > 0 ? true : prev ? false : prev));
     };
-    // Add the scroll event listener when the component mounts
     window.addEventListener('scroll', handleScroll);
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []); // Empty dependency array ensures the effect runs only once on mount
+  }, []);
   
   const handleScrollToTop = () => {
-    window.scrollTo({
+    document.documentElement.scrollTo({
       top: 0,
-      left: 0
+      left: 0,
+      behavior: 'smooth'
     });
   }
 
-  {/**/}
   
   return (
     <div className={`goTop ${goUp ? 'goUp' : ''}`} onClick={handleScrollToTop} >&#10153;</div>

@@ -1,0 +1,142 @@
+/* src/components/modal.css */
+
+.modal-stack {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: var(--modal-layer);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal {
+  position: relative;
+  padding: 1.2rem 1.5rem 1.8rem;
+  border-radius: 0.5rem;
+  min-width: 30rem;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+  animation: fadeIn var(--transition) ease;
+  overflow: hidden;
+
+  &.info {
+    background-color: var(--success);
+    color: #fff;
+  }
+  &.warn {
+    background-color: var(--warning);
+    color: #000;
+  }
+  &.error {
+    background-color: var(--error);
+    color: #fff;
+  }
+
+  .modal-content {
+    margin-right: 2.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align-last: left;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: var(--error);
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .modal-timer-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.5rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation-name: shrink;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  &.confirm {
+    position: fixed;
+    inset: 0;
+    background-color: #fff3;
+    -webkit-backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(0.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .all {
+      background-color: var(--warning);
+      position: relative;
+      padding: 1.2rem 1.5rem 1.8rem;
+      border-radius: 0.5rem;
+      color: hsl(0, 0%, 0%);
+      min-width: 30rem;
+      box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+      animation: fadeIn var(--transition) ease;
+      overflow: hidden;
+
+      .modal-title {
+        border-bottom: 0.1rem solid var(--error);
+        margin-bottom: 1rem;
+        padding: 1rem;
+        font-size: 1.5rem;
+        font-weight: 900;
+      }
+
+      .modal-buttons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .btn {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1.5rem;
+
+        &.confirm {
+          background-color: var(--success);
+          color: #fff;
+        }
+
+        &.cancel {
+          background-color: var(--error);
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
