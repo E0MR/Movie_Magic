@@ -59,14 +59,16 @@
         position: absolute;
       } */
     }
+    p {
+      font-size: 1.25rem;
 
-    a {
-      text-align: center;
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--btn-primary-bg);
-      cursor: pointer;
-      font-weight: 900;
+      a {
+        text-align: center;
+        margin-top: 0.5rem;
+        color: var(--btn-primary-bg);
+        cursor: pointer;
+        font-weight: 900;
+      }
     }
   }
 }

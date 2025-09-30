@@ -89,7 +89,7 @@ function SignUp() {
         } else {
           const birthYear = new Date(value).getFullYear();
           if (birthYear > 2000) {
-            message = "You must be born in 2000 or earlier";
+            message = "You are required to be 25 years old or older.";
           }
         }
         break;
